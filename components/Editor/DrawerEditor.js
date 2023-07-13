@@ -1,27 +1,24 @@
 // import InterpreterComponent from './InterpreterComponent';
-import CodeEditorComponent from './PythonEditorComponent';
+import PythonEditorComponent from './PythonEditorComponent';
+import JSEditorComponent from './JSEditorComponent';
+import REditorComponent from './REditorComponent';
 import CodeIcon from '@mui/icons-material/Code';
 import Button from '@mui/material/Button';
-import ArrowForwardOutlinedIcon from '@mui/icons-material/ArrowForwardOutlined';
 import Drawer from '@mui/material/Drawer';
 import { useState, useEffect, useRef, Fragment } from 'react';
-
+// import RSideRepl from './RSideRepl';
 
 export default function DrawerEditor(props) {
+    const language = props.language.toLowerCase();  // this is the language of the editor
 
-    const language = props.language;  // this is the language of the editor
-    // props.editorOpen and props.setEditorOpen are passed in from the parent component
-   
     const text = props.text;  // this is the text in the editor
+
     const setText = props.setText;  // this is the function to set the text in the editor
 
     const open = props.open;  // this is the state of the drawer
     const setOpen = props.setEditorOpen;  // this is the function to set the state of the drawer
     const [show, setShow] = useState(false);
 
-    // useEffect(() => {
-    //     setText(window.localStorage.getItem('code') || '');
-    // }, [])
 
     const handleOpenClose = () => {
         setOpen(!open);
@@ -45,6 +42,41 @@ export default function DrawerEditor(props) {
     const commitCode = (newText) => {
         // window.localStorage.setItem('code', newText);
     }
+
+    const whichEditor = () => {
+        if (language === 'python') {
+            return (
+                <PythonEditorComponent language={language}
+                    defaultCode={text}
+                    handleOpenClose={handleOpenClose}
+                    {...props} />
+            )
+        }
+        else if (language === 'javascript') {
+            return (
+                <JSEditorComponent language={language}
+                    defaultCode={text}
+                    handleOpenClose={handleOpenClose}
+                    {...props} />
+            )
+        }
+        else if (language === 'r') {
+            return (
+                <REditorComponent language={language}
+                    defaultCode={text}
+                    handleOpenClose={handleOpenClose}
+                    {...props} />
+            )
+        }
+        else {
+            return (
+                <div>
+                    <h2>Language not supported</h2>
+                </div>
+            )
+        }
+    }
+
 
     return (
         <Fragment>
@@ -79,11 +111,7 @@ export default function DrawerEditor(props) {
 
             >
                 <div className='drawer-editor'>
-                    <CodeEditorComponent language={language}
-                        onChange={commitCode}
-                        defaultCode={text}
-                        handleOpenClose={handleOpenClose}
-                        {...props} />
+                    {whichEditor()}
                 </div>
             </Drawer>
         </Fragment>
