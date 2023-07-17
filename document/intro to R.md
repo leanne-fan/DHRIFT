@@ -3,15 +3,11 @@ title: Introduction to R
 description: R is an increasingly popular language for data analysis, especially in academia. 
 programming_language: R
 learning objectives:
-    - Familiarize you with R and RStudio functionality
-    - Run Python programs, both by interacting directly with the interpreter and by preparing and running scripts.
-    - Distinguish among five core data types—integers, floats, strings, booleans, and lists.
-    - Become familiar with core programming concepts, including variables, loops, and conditionals.
-    - Engage with error output and use the internet and documentation to independently research language features.
-    - Learn how to find and import code from external sources to solve more complex problems.
+    - Familiarize you with R language
+    - Understand R syntax and objects
     
 facilitators: 
-    name: 'Stephen Zweibel'
+    name: 'Leanne Fan'
     description: 'Here is a short bio.'
 
 estimated time:
@@ -27,12 +23,9 @@ dependencies:
             recommended: true
 
 authors:
-    - 'Kalle Westerling'
-    - 'Di Yoong'
-    - 'Lisa Rhody'
-    - 'Jojo Karlin'
-    - 'Stephen Zweibel'
-    - 'Patrick Smyth'
+    - 'Yuxiao Luo'
+    - 'Leanne Fan'
+
 
 editors:
     - 'Di Yoong'
@@ -40,41 +33,35 @@ editors:
     - 'Stephen Zweibel'
 
 readings:
-    - Want to learn programming, but not convinced that the Python language is the right language? Check out [Five Reasons Why Learning Python Is The Best Decision](https://medium.com/datadriveninvestor/)
-    - "Some concrete ideas for how to use Python: [What Can I Do With Python?](https://realpython.com/what-can-i-do-with-python/)"
+    - 
 
 ethical considerations:
-    - Python works by reducing data to portable units and presenting them in a way that prioritizes readability. These units are known as "data types" and include strings (words/letters), integers (numbers), booleans (true or false statements), and lists (groups of strings). The python grammar, which dictates how python statements ought to be ordered, values simplicity, efficiency, and concision. You can read more about Python values at [the Zen of Python](https://www.python.org/dev/peps/pep-0020/).
-    - As we learn about the Python data types and grammar, keep in mind that working within any digital format requires making seemingly neutral choices that carry ethical consequences. When using python, be aware of the ways the ways that data is transformed into computable form. What choices are you making about your data? What is being included, and what is left out? What are reductions and assumptions necessary to encode your data? If you are more interested in thinking further about data types and our choices in relation to data, you should have a look at our [Data Literacies workshop](https://www.github.com/DHRI-Curriculum/data-literacies).
+    - understanding where your data comes from
+    - carefully drawing conclusions
+    - relationship between theory and data anlaysis
 
 projects:
     description: "Projects that use the skills you'll learn in this workshop:"
-    The NEH Impact Index:
-        description: Built by former Digital Fellow Patrick Smyth, The NEH Impact Index makes visible the distribution of funds by National Endowment for the Humanities across the United States. The website uses python to map projects, communities, and cultural institutions who have received NEH support. You can check out the code on Github.
-        link: http://www.nehimpact.org/about
-    Mapping Arts NYC: 
-        description: Mapping Arts NYC, created in 2019 by the Graduate Center’s Data for Public Good fellows, “is a project that explores the geography and representation of arts and culture in New York City over time.” It includes a number of Python scripts written to clean and make sense of all the data.
-        link: http://gcdiprojects.org/MappingArtsNYC/
+    The Fossil Fuel Non-Proliferation Tracker:
+        description: The data presented here is based on the Fossil-Fuel Non-Proliferation Database which semi-automatically searches the internet to identify existing climate change supply-side policies. We also rely on data from the Global Fossil Fuel Divestment Commitments Database (managed by Stand.Earth), CAIT Climate Data Explorer, ourworldindata.org, Carbon Brief, Go Fossil Free, The Fossil Fuel Registry, BP Statistical Review of World Energy, Shift Data Project, and reference other available data sources such as the “Fossil Fuel Supply Cuts Database“ beside others. The data used in this Tracker is updated from various sources on a rolling basis.
+        link: https://fossilfueltracker.org/app/ffnpt
+
         
 resources:
-    Digital Fellows’ Python Cheat Sheet: 
-        description: See the Digital Fellows’ Python Cheat Sheet for handy commands that we cover in this workshop.
-        link: https://curriculum.dhinstitutes.org/shortcuts/workshop/python
+    Why R is Hard to Learn: 
+        description: This article helps beginner learners articulate the "un-intuitive" parts of the R language.
+        link: https://r4stats.com/articles/why-r-is-hard-to-learn/
 
 goals:
     - description: 'In this workshop, you will learn to:'
     - Become familiar with core programming concepts, including variables, loops, and conditionals.
-    - Distinguish among five core data types—integers, floats, strings, booleans, and lists.
-    - Engage with error output and use the internet and documentation to independently research language features.
-    - Learn how to find and import code from external sources to solve more complex problems.
-    - Run Python programs, both by interacting directly with the interpreter and by preparing and running scripts.
-    - Understand what Python is and, in general terms, what it can do.
+
 
 ---
 
-# Interacting With Python
+# Interacting With R
 
-This workshop is meant to be _interactive_--it intends to immediately engage you with the concepts you are learning. To that end, all of the Python programming you will learn about can be done here, __directly in your browser__. Throughout the workshop, you will encounter several designated code sections in which you can write and run your Python code. These emulators are meant to allow you quick and easy access to coding principles. However, there are many ways to interact with Python, and you will also learn about how to interact with your Python installation locally on your machine. 
+This workshop is meant to be __interactive__--it intends to immediately engage you with the concepts you are learning. To that end, all of the Python programming you will learn about can be done here, __directly in your browser__. Throughout the workshop, you will encounter several designated code sections in which you can write and run your Python code. These emulators are meant to allow you quick and easy access to coding principles. However, there are many ways to interact with Python, and you will also learn about how to interact with your Python installation locally on your machine. 
 
 With that said, let's get started!
 
