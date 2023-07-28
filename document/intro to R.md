@@ -55,22 +55,20 @@ resources:
 
 goals:
     - description: 'In this workshop, you will learn to:'
-    - Become familiar with core programming concepts, including variables, loops, and conditionals.
+    - Become familiar with core R programming concepts, including data vs. functions, tabular data, and operators.
 
 
 ---
 
 # Interacting With R
 
-This workshop is meant to be __interactive__--it intends to immediately engage you with the concepts you are learning. To that end, all of the Python programming you will learn about can be done here, __directly in your browser__. Throughout the workshop, you will encounter several designated code sections in which you can write and run your Python code. These emulators are meant to allow you quick and easy access to coding principles. However, there are many ways to interact with Python, and you will also learn about how to interact with your Python installation locally on your machine. 
+This workshop is meant to be __interactive__--it intends to immediately engage you with the concepts you are learning. To that end, all of the R programming you will learn about can be done here, __directly in your browser__. Throughout the workshop, you will encounter several designated code sections in which you can write and run your R code. These emulators are meant to allow you quick and easy access to coding principles. However, there are many ways to interact with R, and you will also learn about how to interact with your R installation locally on your machine. 
 
 With that said, let's get started!
 
 ## The Interactive Session
 
-One of the most basic ways to interact with Python is through an "interactive session."  This is a special space that allows us to run little one-line bits of Python, experimenting and exploring what it can do, without having to save it. Think of this interactive space as a playground. Later on, we will be working with Python in a more robust way, executing longer Python scripts.
-
-An interactive session, otherwise known as the __REPL__ (Read-Evaluate-Print Loop), is a basic environment that takes single user inputs, executes them, and returns the results to the user. A typical REPL environment in the terminal looks as follows:
+One of the most basic ways to interact with R is through an "interactive session."  This is a special space that allows us to run little one-line bits of R, experimenting and exploring what it can do, without having to save it. Think of this interactive space as a playground. Later on, we will be working with R in a more robust way, executing longer R scripts.
 
 `r 2 + 2`
 
