@@ -4,7 +4,8 @@ description: R is an increasingly popular language for data analysis, especially
 programming_language: R
 learning objectives:
     - Familiarize you with R language
-    - Understand R syntax and objects
+    - Understand R syntax, logic, and 
+    - 
     
 facilitators: 
     name: 'Leanne Fan'
@@ -71,12 +72,16 @@ One of the most basic ways to interact with Python is through an "interactive se
 
 An interactive session, otherwise known as the __REPL__ (Read-Evaluate-Print Loop), is a basic environment that takes single user inputs, executes them, and returns the results to the user. A typical REPL environment in the terminal looks as follows:
 
-```pycon
-Python 3.7.6 (default, Jan  8 2020, 13:42:34)
-[Clang 4.0.1 (tags/RELEASE_401/final)] :: Anaconda, Inc. on darwin
-Type "help", "copyright", "credits" or "license" for more information.
->>>
+`r 2 + 2`
+
+```{r}
+dim(iris)
 ```
+```{r eval=FALSE}
+dim(iris)
+```
+
+
 As you can see, it first shows the current Python version along with some hints for help or licensing information. Next, you will see three very important greater-than signs: `>>>`. 
 
 These greater-than symbols `>>>` are how you know that you have entered an interactive session with Python, as distinct from the normal `$` terminal prompt (or `%` if you are on MacOS). Let's work with this environment a bit.
