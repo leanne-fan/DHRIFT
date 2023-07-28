@@ -7,11 +7,11 @@ import CodeIcon from '@mui/icons-material/Code';
 
 export default function EditorTopbar(props) {
     const spinnerNeeded = props.spinnerNeeded;
+    const runButtonNeeded = props.runButtonNeeded || false;
     return (
         <>
-           {props.snippets && <FileList snippets={props.snippets} />}
-            <div className="buttonsContainer">
-                                <Button
+            <div className="editorTopBarButtonsContainer">
+                <Button
                     color="primary"
                     aria-label="open drawer"
                     onClick={props.handleOpenClose}
@@ -22,7 +22,7 @@ export default function EditorTopbar(props) {
                         }}
                     />
                 </Button>
-                {(!spinnerNeeded) && <Button
+                {(!spinnerNeeded && runButtonNeeded) && <Button
                     onClick={() => {
                         props.run();
                     }}
@@ -50,7 +50,8 @@ export default function EditorTopbar(props) {
                         marginLeft: "10px",
                         marginTop: "10px"
                     }}
-                />}
+                    />}
+                    {props.snippets && <FileList snippets={props.snippets} />}
 
 
                 {/* <Button

@@ -11,6 +11,7 @@ import fileList from '../components/Editor/FileList';
 import JSTerminal from '../components/Editor/JSTerminal';
 import REditorComponent from '../components/Editor/REditorComponent';
 import JSEditorComponent from '../components/Editor/JSEditorComponent';
+import Webvm from '../components/Webvm';
 
 export default function Test() {
 
@@ -57,8 +58,9 @@ export default function Test() {
                 {/* <FileList files='mobydick.txt'/> */}
             </div>
             {/* <JSTerminal /> */}
-            {<REditorComponent />}
+            {/* {<REditorComponent />} */}
             {/* {<JSEditorComponent/>} */}
+            <Webvm />
         </div>
     )
 
