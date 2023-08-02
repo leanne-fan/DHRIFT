@@ -70,6 +70,8 @@ With that said, let's get started!
 
 One of the most basic ways to interact with R is through an "interactive session."  This is a special space that allows us to run little one-line bits of R, experimenting and exploring what it can do, without having to save it. Think of this interactive space as a playground. Later on, we will be working with R in a more robust way, executing longer R scripts.
 
+eofihwoeifhwoiehfwoiehf
+
 `r 2 + 2`
 
 ```{r}
@@ -79,6 +81,20 @@ dim(iris)
 dim(iris)
 ```
 
+```{r}
+x = 5  # radius of a circle
+```
+
+```{r}
+par(mar = c(4, 4, .2, .1))
+plot(cars, pch = 19)
+plot(pressure, pch = 17)
+```
+
+```{r}
+3+3
+
+```
 
 As you can see, it first shows the current Python version along with some hints for help or licensing information. Next, you will see three very important greater-than signs: `>>>`. 
 
@@ -103,6 +119,8 @@ The first four operations above are addition, subtraction, multiplication, and d
 Note the way you interact with Python at the prompt. After entering an expression such as `2 + 3`, Python "evaluates" it to a simpler form, `5`, and then prints out the answer for you. **This process is what is meant by the Read Eval Print Loop, or REPL**. Reading takes commands from you, the input is evaluated or run, the result is printed out, and the prompt is shown again to wait for more input.
 
 The REPL is useful for quick tests and, later, can be used for exploring and debugging your programs interactively. As mentioned, you might consider it a kind of playground for testing and experimenting with Python expressions.
+
+
 
 ## Opening the REPL in the Terminal
 
