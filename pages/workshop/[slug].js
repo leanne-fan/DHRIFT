@@ -50,6 +50,7 @@ export default function WorkshopPage({
   const currentFile = workshop
   const title = currentFile.title
   const content = currentFile.content
+  const language = currentFile.programming_language
 
   // get front page content
   const [facilitatorOpen, setFacilitatorOpen] = useState(false);
@@ -72,7 +73,7 @@ export default function WorkshopPage({
   // convert markdown to html and split into pages
   // convert markdown to html and split into pages
   const htmlContent = function (content) {
-    const htmlifiedContent = ConvertMarkdown(content, uploads, workshop, setCode, setEditorOpen, setAskToRun);
+    const htmlifiedContent = ConvertMarkdown(content, uploads, workshop, language, setCode, setEditorOpen, setAskToRun);
     // split react element array into pages
     const allPages = [];
     const pages = htmlifiedContent.props.children.reduce((acc, curr) => {
@@ -152,7 +153,7 @@ export default function WorkshopPage({
 
   useEffect(() => {
     setPages(htmlContent(content));
-    setCurrentPage(1);
+    // setCurrentPage(1);
     const urlParams = new URLSearchParams(window.location.search);
     const page = Number(urlParams.get('page'));
     if (page) {
@@ -165,16 +166,6 @@ export default function WorkshopPage({
       setCurrentContentLoaded(true);
     }
   }, [slug]);
-
-
-  // if pages changes, change current content
-  useEffect(() => {
-    if (currentPage) {
-      setCurrentContent(pages[currentPage - 1]);
-    } else {
-      setCurrentContent(pages[0]);
-    }
-  }, [pages])
 
   useEffect(() => {
     // check if current content has changed and get the current h1
@@ -275,6 +266,7 @@ export default function WorkshopPage({
           askToRun={askToRun}
           setAskToRun={setAskToRun}
           language={currentFile.programming_language}
+          allUploads={uploads}
         />}
       <ClassFacilitator
         // You'll have to make state variables in the slug and pass them down

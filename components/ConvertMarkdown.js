@@ -6,19 +6,17 @@ import 'highlight.js/styles/atom-one-dark.css'
 import Image from 'next/image'
 import Zoom from 'react-medium-image-zoom'
 import 'react-medium-image-zoom/dist/styles.css'
-import PythonREPLComponent from './PythonREPLComponent';
-import TerminalComponent from './TerminalComponent';
+import PythonREPLComponent from './Editor/PythonREPLComponent';
 import EditorWithTabsComponent from './Editor/EditorWithTabs';
-import InterpreterComponent from './Editor/InterpreterComponent';
+import CodeRunBox from './Editor/CodeRunBox';
 import Download from './Download';
 import JSTerminal from './Editor/JSTerminal';
 import Info from './Info';
-import {Secret} from './Secret';
+import SecretComponent from './SecretComponent';
 // import HTMLEditorComponent from './Editor/HTMLEditorComponent';
 import { renderToStaticMarkup } from 'react-dom/server';
 import he from 'he';
-var beautify = require('js-beautify');
-var beautifyHTML = require('js-beautify').html;
+
 
 
 const Code = ({ className, children }) => {
@@ -57,7 +55,10 @@ const Code = ({ className, children }) => {
 }
 
 const Imager = ({ className, ...props }) => {
-    const newProps = { ...props };
+    let newProps = { ...props };
+    if (process.env.NEXT_PUBLIC_GITHUB_ACTIONS === "true") {
+        newProps.src = '/' + process.env.NEXT_PUBLIC_REPO_NAME + newProps.src;
+    }
     const imageSource = newProps.src
     return (
         <div className="image-container">
@@ -78,6 +79,7 @@ const Imager = ({ className, ...props }) => {
 
 const CodeEditor = ({ children, ...props }) => {
     var codeText
+
     if (children) {
         if (children.length > 0) {
             if (typeof children[0] === 'object') {
@@ -88,21 +90,22 @@ const CodeEditor = ({ children, ...props }) => {
             }
             return (
                 <div>
-                    <InterpreterComponent language={props.language} defaultCode={codeText} {...props} />
+                    <CodeRunBox language={props.language} defaultCode={codeText} {...props} />
                 </div>
             )
-        } else {
+        }
+        else {
             codeText = children.join('');
         }
         return (
             <div>
-                <InterpreterComponent language={props.language} defaultCode={codeText} {...props} />
+                <CodeRunBox language={props.language} defaultCode={codeText} {...props} />
             </div>
         )
     } else {
         return (
             <div>
-                <InterpreterComponent language={props.language} {...props} />
+                <CodeRunBox language={props.language} {...props} />
             </div>
         )
     }
@@ -128,7 +131,7 @@ const PythonREPL = ({ className, children }) => {
 const Terminal = ({ className, children }) => {
     return (
         <div>
-            <TerminalComponent />
+            <JSTerminal />
         </div>
     )
 }
@@ -182,12 +185,20 @@ const Quiz = ({ className, children }) => {
 const InfoAlert = ({ className, children }) => {
     return (
         <div className="info-alert">
-            <Info text={children} /> 
+            <Info text={children} />
         </div>
     )
 }
 
-export default function ConvertMarkdown(markdown, uploads, workshop, setCode, setEditorOpen, setAskToRun) {
+const Secret = ({ className, children }) => {
+    return (
+        <div>
+            <SecretComponent text={children} />
+        </div>
+    )
+}
+
+export default function ConvertMarkdown(markdown, uploads, workshop, language, setCode, setEditorOpen, setAskToRun) {
     return (
         compiler(markdown,
             {
@@ -209,13 +220,13 @@ export default function ConvertMarkdown(markdown, uploads, workshop, setCode, se
                         props: {
                             allUploads: uploads,
                             // language is given or python is default
-                            language: 'python',
+                            language: language,
                             setCode: setCode,
                             setEditorOpen: setEditorOpen,
                             setAskToRun: setAskToRun,
                             workshop: workshop,
                         }
-                        
+
                     },
                     Download: {
                         component: Download,
@@ -230,13 +241,15 @@ export default function ConvertMarkdown(markdown, uploads, workshop, setCode, se
                             className: 'info-alert',
                         }
                     },
+ 
                     Quiz,
                     PythonREPL,
                     Terminal,
                     EditorWithTabs,
                     JSTerminal,
+                    Secret
                     // HTMLEditor,
-                    Secret,
+                   
                 }
 
             })

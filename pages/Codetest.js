@@ -1,15 +1,17 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-import PythonREPLComponent from '../components/PythonREPLComponent';
+import PythonREPLComponent from '../components/Editor/PythonREPLComponent';
 import CodeEditorComponent from '../components/Editor/PythonEditorComponent';
 import UploadtoStorage from '../components/UploadtoStorage';
 import EditorWithTabs from '../components/Editor/EditorWithTabs';
-import JSInterpreter from '../components/Editor/InterpreterComponent';
 import { height } from '@mui/system';
 // import HTMLEditorComponent from '../components/Editor/HTMLEditorComponent';
 import fileList from '../components/Editor/FileList';
 import JSTerminal from '../components/Editor/JSTerminal';
+import REditorComponent from '../components/Editor/REditorComponent';
+import JSEditorComponent from '../components/Editor/JSEditorComponent';
+import Webvm from '../components/Webvm';
 
 export default function Test() {
 
@@ -47,9 +49,6 @@ export default function Test() {
             </div>
             {/* <FileList /> */}
             <div>
-                {/* <JSInterpreter /> */}
-            </div>
-            <div>
                 {/* <TerminalComponent /> */}
             </div>
             <div>
@@ -59,6 +58,9 @@ export default function Test() {
                 {/* <FileList files='mobydick.txt'/> */}
             </div>
             {/* <JSTerminal /> */}
+            {/* {<REditorComponent />} */}
+            {/* {<JSEditorComponent/>} */}
+            <Webvm />
         </div>
     )
 
