@@ -67,15 +67,7 @@ With that said, let's get started!
 
 One of the most basic ways to interact with R is through an "interactive session."  This is a special space that allows us to run little one-line bits of R, experimenting and exploring what it can do, without having to save it. Think of this interactive space as a playground. Later on, we will be working with R in a more robust way, executing longer R scripts.
 
-eofihwoeifhwoiehfwoiehf
 
-
-```{r}
-dim(iris)
-```
-```{r eval=FALSE}
-dim(iris)
-```
 
 ```r
 x = 5  # radius of a circle
