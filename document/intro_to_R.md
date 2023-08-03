@@ -325,6 +325,7 @@ print("Hello World!")
 ```
 
 <CodeEditor>
+    1+1
 </CodeEditor>
 
 You should see the text `Hello World!` appear in the output below the code editor in the shell.
