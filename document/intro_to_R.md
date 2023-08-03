@@ -5,7 +5,7 @@ programming_language: R
 learning objectives:
     - Familiarize you with R language
     - Understand R syntax, logic, and 
-    - 
+
     
 facilitators: 
     name: 'Leanne Fan'
@@ -32,9 +32,6 @@ editors:
     - 'Di Yoong'
     - 'Lisa Rhody' 
     - 'Stephen Zweibel'
-
-readings:
-    - 
 
 ethical considerations:
     - understanding where your data comes from
