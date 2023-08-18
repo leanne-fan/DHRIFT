@@ -4,7 +4,8 @@ description: R is an increasingly popular language for data analysis, especially
 programming_language: R
 learning objectives:
     - Familiarize you with R language
-    - Understand R syntax, logic, and 
+    - Understand R syntax, logic, and data structure
+    - this should work now, if i push this to my fork?
 
     
 facilitators: 
